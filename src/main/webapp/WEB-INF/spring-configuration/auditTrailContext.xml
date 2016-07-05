@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
@@ -19,7 +19,7 @@
     <aop:aspectj-autoproxy/>
 
     <bean id="auditTrailManagementAspect" class="org.jasig.inspektr.audit.AuditTrailManagementAspect"
-          c:applicationCode="${cas.audit.appcode:CAS}" c:auditablePrincipalResolver-ref="assertionAsReturnValuePrincipalResolver"
+          c:applicationCode="${cas.audit.appcode:CAS}" c:auditablePrincipalResolver-ref="auditablePrincipalResolver"
           c:auditTrailManagers-ref="auditTrailManager" c:auditActionResolverMap-ref="auditActionResolverMap"
           c:auditResourceResolverMap-ref="auditResourceResolverMap"/>
 
